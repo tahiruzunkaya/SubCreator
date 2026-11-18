@@ -1,0 +1,19 @@
+SubCreator, aşağıdaki üçüncü taraf bileşenleri değiştirmeden kullanır.
+
+Hy-MT2 çeviri modeli (pakete dahil değildir)
+  Tencent Hunyuan, https://github.com/Tencent-Hunyuan/Hy-MT2
+  İlk açılışta kullanıcının seçtiği GGUF dosyası Hugging Face'ten indirilir:
+    https://huggingface.co/tencent/Hy-MT2-7B-GGUF
+    https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF
+  Lisans: Apache License 2.0
+
+llama.cpp (llama\)
+  The ggml authors, https://github.com/ggml-org/llama.cpp (sürüm b12499, Windows Vulkan x64)
+  Lisans: MIT (llama\LICENSE-llama.cpp.txt)
+  llama\libomp.dll: LLVM OpenMP, Apache License 2.0 with LLVM Exceptions (llama\LICENSE-LLVM-OpenMP)
+  llama\msvcp140.dll, vcruntime140.dll, vcruntime140_1.dll: Microsoft Visual C++ çalışma zamanı
+  (Microsoft'un yeniden dağıtılabilir dosyaları)
+
+PySide6 / Qt (LGPLv3), RapidOCR ve PaddleOCR modelleri (Apache 2.0), ONNX Runtime (MIT),
+OpenCV (Apache 2.0), NumPy (BSD), mss (MIT), requests (Apache 2.0)
+  Kendi lisanslarıyla, paketin _internal klasöründe.

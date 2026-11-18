@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Build çıktıları (PyInstaller)
+build/
+dist/
+*.spec
+
+# Elle konan büyük dosyalar: llama.cpp ve modeller (bkz. README > Geliştirme)
+vendor/
+*.gguf
+*.gguf.part
+
+# Yerel ayar ve kayıtlar
+/config.json
+*.log
+*.db
