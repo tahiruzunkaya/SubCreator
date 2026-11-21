@@ -60,12 +60,11 @@ DWMWA_CLOAKED = 14
 
 Rect = tuple[int, int, int, int]  # x, y, w, h
 
-_exe_cache: dict[int, str] = {}
-
 
 def process_exe_name(pid: int) -> str:
-    if pid in _exe_cache:
-        return _exe_cache[pid]
+    """Sürecin exe adı. Önbelleğe alınmaz: Windows süreç numaralarını yeniden kullanır; eski
+    bir eşleşme kalırsa yeniden başlatılan hedef (ör. chiaki) başka bir program sanılıp
+    bir daha bulunamıyordu. Sorgu mikro saniyeler sürdüğü için önbelleğe gerek de yok."""
     name = ""
     handle = kernel32.OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, False, pid)
     if handle:
@@ -76,7 +75,6 @@ def process_exe_name(pid: int) -> str:
                 name = os.path.basename(buf.value)
         finally:
             kernel32.CloseHandle(handle)
-    _exe_cache[pid] = name
     return name
 
 
